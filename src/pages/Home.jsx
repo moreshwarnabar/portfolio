@@ -1,7 +1,54 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+
+import Loader from '../components/Loader';
+import Island from '../models/Island';
+
+{
+  /* <div className="absolute inset-x-0 top-28 z-10 flex items-center justify-center">
+  POPUP
+</div> */
+}
 
 const Home = () => {
-  return <div>Home</div>;
+  const adjustIslandForScreenSize = () => {
+    let screenScale = null;
+    const screenPos = [0, -6.5, -43];
+    const rotation = [0.1, 4.7, 0];
+
+    if (window.innerWidth < 768) {
+      screenScale = [0.9, 0.9, 0.9];
+    } else {
+      screenScale = [1, 1, 1];
+    }
+
+    return [screenScale, screenPos, rotation];
+  };
+
+  const [screenScale, screenPos, rotation] = adjustIslandForScreenSize();
+
+  return (
+    <section className="relative h-screen w-full">
+      <Canvas
+        className="h-screen w-full bg-transparent"
+        camera={{ near: 0.1, far: 1000 }}
+      >
+        <Suspense fallback={<Loader />}>
+          <directionalLight />
+          <ambientLight />
+          <pointLight />
+          <spotLight />
+          <hemisphereLight />
+
+          <Island
+            position={screenPos}
+            scale={screenScale}
+            rotation={rotation}
+          />
+        </Suspense>
+      </Canvas>
+    </section>
+  );
 };
 
 export default Home;
