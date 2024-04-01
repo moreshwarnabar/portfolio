@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 
 import Loader from '../components/Loader';
@@ -14,6 +14,8 @@ import Plane from '../models/Plane';
 }
 
 const Home = () => {
+  const [isRotating, setIsRotating] = useState(false);
+
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
     const screenPos = [0, -6.5, -43];
@@ -28,12 +30,27 @@ const Home = () => {
     return [screenScale, screenPos, rotation];
   };
 
-  const [screenScale, screenPos, rotation] = adjustIslandForScreenSize();
+  const adjustPlaneForScreenSize = () => {
+    let screenScale, screenPos;
+
+    if (window.innerWidth < 768) {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPos = [0, -1.5, 0];
+    } else {
+      screenScale = [3, 3, 3];
+      screenPos = [0, -4, -4];
+    }
+
+    return [screenScale, screenPos];
+  };
+
+  const [islandScale, islandPos, islandRot] = adjustIslandForScreenSize();
+  const [planeScale, planePos] = adjustPlaneForScreenSize();
 
   return (
     <section className="relative h-screen w-full">
       <Canvas
-        className="h-screen w-full bg-transparent"
+        className={`h-screen w-full bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
@@ -45,13 +62,20 @@ const Home = () => {
             intensity={1}
           />
 
-          <Plane />
           <Bird />
           <Sky />
           <Island
-            position={screenPos}
-            scale={screenScale}
-            rotation={rotation}
+            position={islandPos}
+            scale={islandScale}
+            rotation={islandRot}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+          />
+          <Plane
+            scale={planeScale}
+            position={planePos}
+            isRotating={isRotating}
+            rotation={[0, 20, 0]}
           />
         </Suspense>
       </Canvas>
