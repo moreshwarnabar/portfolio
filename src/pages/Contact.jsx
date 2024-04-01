@@ -1,19 +1,28 @@
-import React, { useRef, useState } from 'react';
+import React, { Suspense, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { Canvas } from '@react-three/fiber';
+
+import Fox from '../models/Fox';
+import Loader from '../components/Loader';
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [isLoading, setIsLoading] = useState(false);
+  const [curAnimation, setCurAnimation] = useState('idle');
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  const handleFocus = () => {};
-  const handleBlur = () => {};
+
+  const handleFocus = () => setCurAnimation('walk');
+
+  const handleBlur = () => setCurAnimation('idle');
+
   const handleSubmit = e => {
     e.preventDefault();
     setIsLoading(true);
+    setCurAnimation('hit');
 
     emailjs
       .send(
@@ -30,20 +39,25 @@ const Contact = () => {
       )
       .then(() => {
         setIsLoading(false);
+        setCurAnimation('idle');
         // TODO: show success
         // TODO: hide an alert
 
-        setForm({ name: '', email: '', message: '' });
+        setTimeout(() => {
+          setCurAnimation('idle');
+          setForm({ name: '', email: '', message: '' });
+        }, 3000);
       })
       .catch(err => {
         setIsLoading(false);
+        setCurAnimation('idle');
         console.log(err);
         // TODO: show error
       });
   };
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section className="relative flex lg:flex-row flex-col max-container overflow-y-auto">
       <div className="flex-1 min-2-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
 
@@ -104,6 +118,28 @@ const Contact = () => {
             {isLoading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
+      </div>
+
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+        <Canvas
+          camera={{
+            position: [0, 0, 5],
+            fov: 75,
+            near: 0.1,
+            far: 1000,
+          }}
+        >
+          <directionalLight intensity={2.5} position={[0, 0, 1]} />
+          <ambientLight intensity={0.5} />
+          <Suspense fallback={<Loader />}>
+            <Fox
+              position={[0.5, 0.35, 0]}
+              rotation={[12.6, -0.6, 0]}
+              scale={[0.6, 0.6, 0.6]}
+              curAnimation={curAnimation}
+            />
+          </Suspense>
+        </Canvas>
       </div>
     </section>
   );
