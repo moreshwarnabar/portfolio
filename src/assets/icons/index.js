@@ -1,3 +1,4 @@
+import asu from './asu.svg';
 import css from './css.svg';
 import express from './express.svg';
 import git from './git.svg';
@@ -9,6 +10,7 @@ import linkedin from './linkedin.svg';
 import mongodb from './mongodb.svg';
 import motion from './motion.svg';
 import mui from './mui.svg';
+import muj from './muj.svg';
 import nextjs from './nextjs.svg';
 import nodejs from './nodejs.svg';
 import postgres from './postgresql.svg';
@@ -34,6 +36,7 @@ import soundoff from './soundoff.png';
 import verifone from './verifone.svg';
 
 export {
+  asu,
   css,
   express,
   git,
@@ -45,6 +48,7 @@ export {
   mongodb,
   motion,
   mui,
+  muj,
   nextjs,
   nodejs,
   postgres,

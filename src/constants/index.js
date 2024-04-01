@@ -1,5 +1,6 @@
 import { meta, shopify, starbucks, tesla } from '../assets/images';
 import {
+  asu,
   car,
   contact,
   css,
@@ -11,6 +12,7 @@ import {
   javascript,
   linkedin,
   mongodb,
+  muj,
   nextjs,
   nodejs,
   postgres,
@@ -126,6 +128,23 @@ export const workExp = [
   },
 ];
 
+export const education = [
+  {
+    title: 'Master of Science in Computer Science',
+    icon: asu,
+    iconBg: '#8C1D40',
+    institution: 'Arizona State University',
+    date: 'Aug 2023 - Present',
+  },
+  {
+    title: 'Bachelor of Technology in Electrical and Electronics Engineering',
+    icon: muj,
+    iconBg: '#f08000',
+    institution: 'Manipal University Jaipur',
+    date: 'Jul 2014 - Aug 2020',
+  },
+];
+
 export const socialLinks = [
   {
     name: 'Contact',
@@ -135,12 +154,12 @@ export const socialLinks = [
   {
     name: 'GitHub',
     iconUrl: github,
-    link: 'https://github.com/YourGitHubUsername',
+    link: 'https://github.com/moreshwarnabar',
   },
   {
     name: 'LinkedIn',
     iconUrl: linkedin,
-    link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+    link: 'https://www.linkedin.com/in/moreshwar-rajan-nabar',
   },
 ];
 
