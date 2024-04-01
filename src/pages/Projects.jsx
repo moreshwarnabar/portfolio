@@ -17,10 +17,9 @@ const Projects = () => {
 
       <div className="mt-5 flex flex-col gap-3 text-slate-500">
         <p>
-          I've participated on multiple projects. Many of them are available in
-          my GitHub profile. Feel free to explore the codebase and contribute
-          your ideas for further enhancements. Your collaboration is highly
-          valued!
+          I've worked on multiple projects. Many of them are available in my
+          GitHub profile. Feel free to explore the codebase and contribute your
+          ideas for further enhancements. Your collaboration is highly valued!
         </p>
       </div>
 

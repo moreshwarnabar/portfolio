@@ -28,6 +28,9 @@ import {
   three,
   typescript,
   verifone,
+  music,
+  tshirt,
+  apple,
 } from '../assets/icons';
 
 export const skills = [
@@ -161,51 +164,35 @@ export const socialLinks = [
 
 export const projects = [
   {
-    iconUrl: pricewise,
+    iconUrl: music,
     theme: 'btn-back-red',
-    name: 'Amazon Price Tracker',
+    name: 'Spotify Clone',
     description:
-      'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-    link: 'https://github.com/adrianhajdin/pricewise',
+      'Developed a replica of the popular digital music service "Spotify," enabling users to upload and listen to music.',
+    link: 'https://spotify-clone-beige-two.vercel.app/',
   },
   {
-    iconUrl: threads,
-    theme: 'btn-back-green',
-    name: 'Full Stack Threads Clone',
+    iconUrl: tshirt,
+    theme: 'btn-back-yellow',
+    name: '3D T-Shirt Customization App',
     description:
-      'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-    link: 'https://github.com/adrianhajdin/threads',
+      'App that provides a virtual environment to design T-Shirts, and leverages AI to generate patterns and textures.',
+    link: 'https://3d-shop-gold.vercel.app/',
   },
   {
-    iconUrl: car,
-    theme: 'btn-back-blue',
-    name: 'Car Finding App',
+    iconUrl: apple,
+    theme: 'btn-back-black',
+    name: 'Product Launch Website',
     description:
-      'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-    link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+      "Created a page identical to Apple's iPhone Website, enhancing user experience with seamless and captivating animations.",
+    link: 'https://apple-website-blue.vercel.app/',
   },
   {
     iconUrl: snapgram,
     theme: 'btn-back-pink',
-    name: 'Full Stack Instagram Clone',
+    name: 'Face Recognition Service',
     description:
-      'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-    link: 'https://github.com/adrianhajdin/social_media_app',
-  },
-  {
-    iconUrl: estate,
-    theme: 'btn-back-black',
-    name: 'Real-Estate Application',
-    description:
-      'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-    link: 'https://github.com/adrianhajdin/projects_realestate',
-  },
-  {
-    iconUrl: summiz,
-    theme: 'btn-back-yellow',
-    name: 'AI Summarizer Application',
-    description:
-      'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-    link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+      'Built a cloud service that performs image classification on input images, and returns the classification result.',
+    link: 'https://github.com/moreshwarnabar/face-recognition-service',
   },
 ];

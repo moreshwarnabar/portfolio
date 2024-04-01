@@ -35,6 +35,9 @@ import contact from './contact.svg';
 import soundon from './soundon.png';
 import soundoff from './soundoff.png';
 import verifone from './verifone.svg';
+import music from './music.svg';
+import tshirt from './tshirt.svg';
+import apple from './apple.svg';
 
 export {
   asu,
@@ -74,4 +77,7 @@ export {
   soundon,
   soundoff,
   verifone,
+  music,
+  tshirt,
+  apple,
 };
