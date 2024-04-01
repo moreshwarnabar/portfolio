@@ -148,11 +148,6 @@ export const education = [
 
 export const socialLinks = [
   {
-    name: 'Contact',
-    iconUrl: email,
-    link: '/contact',
-  },
-  {
     name: 'GitHub',
     iconUrl: github,
     link: 'https://github.com/moreshwarnabar',
