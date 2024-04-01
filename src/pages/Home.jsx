@@ -4,6 +4,8 @@ import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import Island from '../models/Island';
 import Sky from '../models/Sky';
+import Bird from '../models/Bird';
+import Plane from '../models/Plane';
 
 {
   /* <div className="absolute inset-x-0 top-28 z-10 flex items-center justify-center">
@@ -43,6 +45,8 @@ const Home = () => {
             intensity={1}
           />
 
+          <Plane />
+          <Bird />
           <Sky />
           <Island
             position={screenPos}
