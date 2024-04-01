@@ -61,6 +61,6 @@ const Fox = ({ curAnimation, ...props }) => {
   );
 };
 
-useGLTF.preload('/fox.glb');
+useGLTF.preload(scene);
 
 export default Fox;
