@@ -1,5 +1,6 @@
 import asu from './asu.svg';
 import css from './css.svg';
+import email from './email.svg';
 import express from './express.svg';
 import git from './git.svg';
 import github from './github.svg';
@@ -38,6 +39,7 @@ import verifone from './verifone.svg';
 export {
   asu,
   css,
+  email,
   express,
   git,
   github,

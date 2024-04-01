@@ -4,6 +4,7 @@ import {
   car,
   contact,
   css,
+  email,
   estate,
   git,
   github,
@@ -148,7 +149,7 @@ export const education = [
 export const socialLinks = [
   {
     name: 'Contact',
-    iconUrl: contact,
+    iconUrl: email,
     link: '/contact',
   },
   {
