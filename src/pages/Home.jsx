@@ -6,6 +6,7 @@ import Island from '../models/Island';
 import Sky from '../models/Sky';
 import Bird from '../models/Bird';
 import Plane from '../models/Plane';
+import HomeInfo from '../components/HomeInfo';
 
 {
   /* <div className="absolute inset-x-0 top-28 z-10 flex items-center justify-center">
@@ -50,6 +51,9 @@ const Home = () => {
 
   return (
     <section className="relative h-screen w-full">
+      <div className="absolute inset-x-0 top-28 z-10 flex items-center justify-center">
+        {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
       <Canvas
         className={`h-screen w-full bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
         camera={{ near: 0.1, far: 1000 }}
