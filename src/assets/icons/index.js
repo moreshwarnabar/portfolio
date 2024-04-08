@@ -38,6 +38,8 @@ import verifone from './verifone.svg';
 import music from './music.svg';
 import tshirt from './tshirt.svg';
 import apple from './apple.svg';
+import crm from './crm.svg';
+import face from './face.svg';
 
 export {
   asu,
@@ -80,4 +82,6 @@ export {
   music,
   tshirt,
   apple,
+  crm,
+  face,
 };

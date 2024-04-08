@@ -31,6 +31,8 @@ import {
   music,
   tshirt,
   apple,
+  face,
+  crm,
 } from '../assets/icons';
 
 export const skills = [
@@ -188,11 +190,19 @@ export const projects = [
     link: 'https://apple-website-blue.vercel.app/',
   },
   {
-    iconUrl: snapgram,
+    iconUrl: face,
     theme: 'btn-back-pink',
     name: 'Face Recognition Service',
     description:
       'Built a cloud service that performs image classification on input images, and returns the classification result.',
     link: 'https://github.com/moreshwarnabar/face-recognition-service',
+  },
+  {
+    iconUrl: crm,
+    theme: 'btn-back-orange',
+    name: 'CRM Dashboard',
+    description:
+      'Created a React-based CRM dashboard featuring comprehensive authentication, charts, and a fully operational kanban board.',
+    link: 'https://admin-dashboard-azure-iota.vercel.app/',
   },
 ];

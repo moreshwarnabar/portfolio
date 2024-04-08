@@ -22,7 +22,7 @@ const renderContent = {
   ),
   2: (
     <InfoBox
-      text="Passion for developing full stack solutions"
+      text="Passionate about developing full stack solutions"
       link="/about"
       btnText="Learn More"
     />
